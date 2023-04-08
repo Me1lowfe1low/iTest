@@ -2,7 +2,7 @@
 //  iTestUITestsLaunchTests.swift
 //  iTestUITests
 //
-//  Created by Дмитрий Гордиенко on 15.03.2023.
+//  Created by Dmitrii Gordienko on 15.03.2023.
 //
 
 import XCTest
