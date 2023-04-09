@@ -17,6 +17,11 @@
 		518DDC3A29E0AF5F008C125B /* AnswersOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518DDC3929E0AF5F008C125B /* AnswersOptions.swift */; };
 		518DDC3C29E0B0AA008C125B /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518DDC3B29E0B0A9008C125B /* DetailView.swift */; };
 		518DDC4029E0B167008C125B /* SideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518DDC3F29E0B167008C125B /* SideMenu.swift */; };
+		519C50F229E1A0D800FE249E /* LayoutModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519C50F129E1A0D800FE249E /* LayoutModel.swift */; };
+		519C50F429E29B0600FE249E /* QuestionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519C50F329E29B0600FE249E /* QuestionType.swift */; };
+		519C50F629E2BDAF00FE249E /* AnswerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519C50F529E2BDAF00FE249E /* AnswerModel.swift */; };
+		519C50F829E2C52400FE249E /* AnswersAlignmentDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519C50F729E2C52400FE249E /* AnswersAlignmentDTO.swift */; };
+		519C50FA29E2C55C00FE249E /* SectionViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 519C50F929E2C55C00FE249E /* SectionViewModifier.swift */; };
 		51D881D829CCA0C5000EF60B /* TestListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51D881D729CCA0C4000EF60B /* TestListView.swift */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +57,11 @@
 		518DDC3929E0AF5F008C125B /* AnswersOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswersOptions.swift; sourceTree = "<group>"; };
 		518DDC3B29E0B0A9008C125B /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		518DDC3F29E0B167008C125B /* SideMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenu.swift; sourceTree = "<group>"; };
+		519C50F129E1A0D800FE249E /* LayoutModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutModel.swift; sourceTree = "<group>"; };
+		519C50F329E29B0600FE249E /* QuestionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionType.swift; sourceTree = "<group>"; };
+		519C50F529E2BDAF00FE249E /* AnswerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerModel.swift; sourceTree = "<group>"; };
+		519C50F729E2C52400FE249E /* AnswersAlignmentDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswersAlignmentDTO.swift; sourceTree = "<group>"; };
+		519C50F929E2C55C00FE249E /* SectionViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionViewModifier.swift; sourceTree = "<group>"; };
 		51D881D729CCA0C4000EF60B /* TestListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -147,6 +157,7 @@
 				518DDC3929E0AF5F008C125B /* AnswersOptions.swift */,
 				518DDC3B29E0B0A9008C125B /* DetailView.swift */,
 				518DDC3F29E0B167008C125B /* SideMenu.swift */,
+				519C50F929E2C55C00FE249E /* SectionViewModifier.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -154,6 +165,10 @@
 		51D881D529CCA08D000EF60B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				519C50F129E1A0D800FE249E /* LayoutModel.swift */,
+				519C50F329E29B0600FE249E /* QuestionType.swift */,
+				519C50F529E2BDAF00FE249E /* AnswerModel.swift */,
+				519C50F729E2C52400FE249E /* AnswersAlignmentDTO.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -298,9 +313,14 @@
 				51D881D829CCA0C5000EF60B /* TestListView.swift in Sources */,
 				5151758629C2082B0027718D /* ContentView.swift in Sources */,
 				518DDC3A29E0AF5F008C125B /* AnswersOptions.swift in Sources */,
+				519C50F629E2BDAF00FE249E /* AnswerModel.swift in Sources */,
 				518DDC4029E0B167008C125B /* SideMenu.swift in Sources */,
 				518DDC3C29E0B0AA008C125B /* DetailView.swift in Sources */,
+				519C50FA29E2C55C00FE249E /* SectionViewModifier.swift in Sources */,
 				5151758429C2082B0027718D /* iTestApp.swift in Sources */,
+				519C50F829E2C52400FE249E /* AnswersAlignmentDTO.swift in Sources */,
+				519C50F229E1A0D800FE249E /* LayoutModel.swift in Sources */,
+				519C50F429E29B0600FE249E /* QuestionType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,15 +8,20 @@
 import SwiftUI
 
 struct AnswersOptions: View {
-    @State var title: String
-    @Binding var checked: Bool
+    @State var answer: AnswerModel
+    @Binding var option: AnswersAlignmentDTO
+    
     var body: some View {
         HStack {
-            Text(title)
+            Text(answer.title)
+                .font(.title3)
             Spacer()
-            Button(action: { self.checked.toggle() } )
+            Button(action: {
+                option.toggle(with: answer)
+                
+            })
             {
-                Image(systemName: checked ? "square" : "xmark.app")
+                Image(systemName: option.isChoosen(with: answer) ? "xmark.app" : "square")
             }
         }
         .padding(.horizontal)
@@ -25,6 +30,6 @@ struct AnswersOptions: View {
 
 struct AnswersOptions_Previews: PreviewProvider {
     static var previews: some View {
-        AnswersOptions(title: "Multiple questions", checked: .constant(true))
+        AnswersOptions(answer: AnswerModel.multiple, option: .constant(AnswersAlignmentDTO()))
     }
 }

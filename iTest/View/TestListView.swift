@@ -42,7 +42,6 @@ struct TestListView: View {
                     Image(systemName: "plus.circle")
                 }
             }
-        
         }
         .frame(width: width , height: height)
         .background(Color(UIColor.secondarySystemBackground))
