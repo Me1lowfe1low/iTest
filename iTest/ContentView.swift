@@ -14,6 +14,13 @@ struct ContentView: View {
         NavigationView {
             List {
                 NavigationLink {
+                    MainView()
+                        
+                } label: {
+                    Label("Main", systemImage: "house.circle")
+                }
+                
+                NavigationLink {
                     DetailView(title: "About", isExpanded: sideBarIsOpen)
                         
                 } label: {
@@ -22,10 +29,7 @@ struct ContentView: View {
             }
             .listStyle(SidebarListStyle())
             .navigationTitle("Sidebar")
-            
-            Text("Please select a section")
-                .font(.largeTitle)
-                
+            MainView()
         }
     }
 }

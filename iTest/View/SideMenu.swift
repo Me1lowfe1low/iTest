@@ -10,6 +10,7 @@ import SwiftUI
 struct SideMenu: View {
     @State var answerOptions: AnswersAlignmentDTO = AnswersAlignmentDTO()
     @State var questionType: QuestionType = .string
+    @State var shuffled: Bool = false
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -21,8 +22,9 @@ struct SideMenu: View {
                 .padding([.horizontal, .bottom])
             Section("Question content") {
                 ZStack {
-                    Rectangle()
-                        .stroke(lineWidth: 1.0)
+                    RoundedRectangle(cornerRadius: 5)
+                        //.stroke(lineWidth: 1.0)
+                        .fill(Color(UIColor.systemGroupedBackground))
                         .frame(width: .infinity, height: 50)
                     Picker("", selection: $questionType)
                     {
@@ -37,7 +39,7 @@ struct SideMenu: View {
             .modifier(SectionViewModifier())
             Section("Layout") {
                 LazyVGrid(columns: [GridItem(.adaptive(minimum: 50))]) {
-                    ForEach(LayoutModel.allCases) { layout in
+                    ForEach(QuestionLayoutModel.allCases) { layout in
                         Image(systemName: layout.icon)
                             .resizable()
                             .scaledToFit()
@@ -53,13 +55,18 @@ struct SideMenu: View {
                     AnswersOptions(answer: answerOption, option: $answerOptions)
                 }
                 Divider()
-                Spacer()
             }
             .modifier(SectionViewModifier())
-            
-        
+            Section(){
+               Toggle("Shuffle answers", isOn: $shuffled)
+                    .padding()
+                    .font(.title3)
+            }
+            .modifier(SectionViewModifier())
+            Spacer()
         }
-        .background(Color(UIColor.secondarySystemBackground))
+        .background(Color(UIColor.tertiarySystemBackground)
+            .opacity(1.0))
         .ignoresSafeArea(edges: .top)
         .frame(width: 250, height: .infinity)
     }

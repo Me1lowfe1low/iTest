@@ -19,6 +19,10 @@ struct DetailView: View {
             if isExpanded {
                 HStack {
                     Spacer()
+                        .gesture(
+                            TapGesture()
+                                .onEnded( { isExpanded.toggle()})
+                        )
                     SideMenu()
                 }
                 .transition(.move(edge: .trailing))
@@ -47,9 +51,7 @@ struct DetailView: View {
 
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationView {
             DetailView(title: "New name", isExpanded: true)
-        }
     }
 }
 
