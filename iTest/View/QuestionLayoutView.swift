@@ -2,7 +2,7 @@
 //  QuestionLayoutView.swift
 //  iTest
 //
-//  Created by Дмитрий Гордиенко on 10.04.2023.
+//  Created by Dmitrii Gordienko on 10.04.2023.
 //
 
 import SwiftUI

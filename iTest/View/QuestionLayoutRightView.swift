@@ -2,34 +2,43 @@
 //  QuestionLayoutRightView.swift
 //  iTest
 //
-//  Created by Дмитрий Гордиенко on 10.04.2023.
+//  Created by Dmitrii Gordienko on 10.04.2023.
 //
 
 import SwiftUI
 
 struct QuestionLayoutRightView: View {
     var body: some View {
-        //GeometryReader { proxy in
-            HStack {
-                Spacer()
-                VStack {
-                    Text("Quesion")
-                    Text("Description")
-                    LazyVGrid(columns: GridItem())
-                    {
-                        Button("Add question") {
-                            print("Question added")
-                        }
+        let answerList: [String] = ["1", "2", "3"]
+        
+        HStack {
+            Spacer()
+            VStack {
+                Text("Quesion")
+                Text("Description")
+                LazyVGrid(columns: [GridItem(.flexible())])
+                {
+                    ForEach(answerList, id: \.self) { answer in
+                        Text(answer)
+                    }
+                    Button("Add answer") {
+                        print("Question added")
                     }
                 }
-                RoundedRectangle(cornerRadius: 40)
-                    .stroke(lineWidth: 2)
-                    .frame(width: UIScreen.main.bounds.size.width/2, height: .infinity)
-                    
-                //.frame(width: proxy.size.width/2, height: proxy.size.height)
             }
             .padding()
-            .background(.yellow)
+            
+            Image("imageExample")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(
+                    maxWidth: UIScreen.main.bounds.size.width/2,
+                    maxHeight: UIScreen.main.bounds.size.height
+                )
+                .clipped()
+                .contentShape(Rectangle())
+            
+        }
     }
 }
 

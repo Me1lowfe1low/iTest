@@ -26,6 +26,14 @@ struct ContentView: View {
                 } label: {
                     Label("About", systemImage: "info.circle")
                 }
+                
+                NavigationLink {
+                    AuthenticationView()
+                        
+                } label: {
+                    Label("Authorization", systemImage: "house.circle")
+                }
+                
             }
             .listStyle(SidebarListStyle())
             .navigationTitle("Sidebar")

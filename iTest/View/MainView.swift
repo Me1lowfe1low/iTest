@@ -2,10 +2,11 @@
 //  MainView.swift
 //  iTest
 //
-//  Created by Дмитрий Гордиенко on 09.04.2023.
+//  Created by Dmitrii Gordienko on 09.04.2023.
 //
 
 import SwiftUI
+import Firebase
 
 struct MainView: View {
     //private var twoRowGrid = [GridItem(.fixed( 200), spacing: 5), GridItem(.fixed( 200), spacing: 5)]
@@ -13,10 +14,12 @@ struct MainView: View {
     @State var sortOrder: SortOrder = .alphabetical
     @State var layoutModel: LayoutModel = .grid
     
+    
     var body: some View {
         ScrollView {
             VStack(alignment: .leading) {
                 HStack {
+                    Text("\(showName())")
                     Spacer()
                     ZStack {
                         RoundedRectangle(cornerRadius: 5)
@@ -79,6 +82,14 @@ struct MainView: View {
             .padding(.horizontal)
         }
         .navigationTitle("Main")
+    }
+    
+    func showName() -> String {
+        guard let userName = Auth.auth().currentUser else {
+            return "Unknown user"
+        
+        }
+        return userName.email!
     }
 }
 

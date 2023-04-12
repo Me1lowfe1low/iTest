@@ -2,7 +2,7 @@
 //  QuestionLayoutModel.swift
 //  iTest
 //
-//  Created by Дмитрий Гордиенко on 08.04.2023.
+//  Created by Dmitrii Gordienko on 08.04.2023.
 //
 
 import Foundation
