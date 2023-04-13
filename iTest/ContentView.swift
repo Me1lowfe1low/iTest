@@ -9,13 +9,13 @@ import SwiftUI
 
 struct ContentView: View {
     @State var sideBarIsOpen: Bool = false
+    @State private var userIsLoggedIn = false
     
     var body: some View {
         NavigationView {
             List {
                 NavigationLink {
-                    MainView()
-                        
+                    AuthenticationView(loggedIn: $userIsLoggedIn)
                 } label: {
                     Label("Main", systemImage: "house.circle")
                 }
@@ -27,17 +27,17 @@ struct ContentView: View {
                     Label("About", systemImage: "info.circle")
                 }
                 
-                NavigationLink {
-                    AuthenticationView()
-                        
-                } label: {
-                    Label("Authorization", systemImage: "house.circle")
-                }
+//                NavigationLink {
+//                    AuthenticationView()
+//
+//                } label: {
+//                    Label("Authorization", systemImage: "house.circle")
+//                }
                 
             }
             .listStyle(SidebarListStyle())
             .navigationTitle("Sidebar")
-            MainView()
+            //MainView()
         }
     }
 }

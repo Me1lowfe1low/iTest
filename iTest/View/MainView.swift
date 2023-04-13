@@ -14,11 +14,12 @@ struct MainView: View {
     @State var sortOrder: SortOrder = .alphabetical
     @State var layoutModel: LayoutModel = .grid
     
-    
     var body: some View {
         ScrollView {
             VStack(alignment: .leading) {
                 HStack {
+                    ProfilePictureView(image: Image(systemName: "person.fill"), size: 50)
+                        
                     Text("\(showName())")
                     Spacer()
                     ZStack {
@@ -51,8 +52,9 @@ struct MainView: View {
                     }
                 }
                 .padding()
+                
                 Divider()
-                Section("Your test") {
+                Section("Your tests") {
                     ScrollView(.horizontal) {
                         LazyHGrid(rows: twoRowGrid, alignment: .firstTextBaseline)
                         {
@@ -64,7 +66,6 @@ struct MainView: View {
                         }
                     }
                 }
-                
                 
                 Section("Saved test") {
                     ScrollView(.horizontal) {
@@ -86,10 +87,10 @@ struct MainView: View {
     
     func showName() -> String {
         guard let userName = Auth.auth().currentUser else {
-            return "Unknown user"
+            return "Unknown user name"
         
         }
-        return userName.email!
+        return userName.displayName!
     }
 }
 

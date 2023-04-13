@@ -11,10 +11,10 @@ import Firebase
 struct AuthenticationView: View {
     @State private var email: String = ""
     @State private var password: String = ""
-    @State private var userIsLoggedIn = false
+    @Binding var loggedIn: Bool
     
     var body: some View {
-        if userIsLoggedIn {
+        if loggedIn {
             MainView()
         } else {
             content
@@ -23,8 +23,6 @@ struct AuthenticationView: View {
     
     var content: some View {
         ZStack {
-            Color.black.opacity(0.2)
-            
             VStack(spacing: 20) {
                 HStack {
                     Spacer()
@@ -54,10 +52,32 @@ struct AuthenticationView: View {
                             .padding(.horizontal)
                     }
                 }
-                
                 Button {
-                    register()
+                    login()
                 } label: {
+                    Text("Login")
+                        .bold()
+                        .foregroundColor(.white)
+                        .frame(width: 200, height: 40)
+                        .background(
+                            RoundedRectangle(cornerRadius: 10, style: .continuous)
+                        )
+                }
+                
+                
+//                Button {
+//                    register()
+//                } label: {
+//                    Text("Sign up")
+//                        .bold()
+//                        .foregroundColor(.white)
+//                        .frame(width: 200, height: 40)
+//                        .background(
+//                            RoundedRectangle(cornerRadius: 10, style: .continuous)
+//                        )
+//                }
+                
+                NavigationLink { SignUpView() } label: {
                     Text("Sign up")
                         .bold()
                         .foregroundColor(.white)
@@ -67,10 +87,11 @@ struct AuthenticationView: View {
                         )
                 }
                 
+                
                 Button {
-                    login()
+                    
                 } label: {
-                    Text("Already have an account? Login")
+                    Text("Forgot Password?")
                         .fixedSize()
                         .bold()
                         .foregroundColor(.white)
@@ -78,7 +99,9 @@ struct AuthenticationView: View {
                 }
             }
         }
-        
+        .frame(width: UIScreen.main.bounds.width * 0.6 , height: UIScreen.main.bounds.height/3)
+        .background(.gray.opacity(0.4), in: RoundedRectangle(cornerRadius: 40) )
+        .padding()
         //.ignoresSafeArea()
     }
     
@@ -90,6 +113,7 @@ struct AuthenticationView: View {
                 print((error! as NSError).userInfo)
             }
         }
+        loggedIn.toggle()
         print("Login successful")
     }
     
@@ -99,11 +123,12 @@ struct AuthenticationView: View {
                 print(error!.localizedDescription)
             }
         }
+        loggedIn.toggle()
     }
 }
 
 struct AuthenticationView_Previews: PreviewProvider {
     static var previews: some View {
-        AuthenticationView()
+        AuthenticationView(loggedIn: .constant(false))
     }
 }

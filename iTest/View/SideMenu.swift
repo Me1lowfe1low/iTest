@@ -25,7 +25,7 @@ struct SideMenu: View {
                     RoundedRectangle(cornerRadius: 5)
                         //.stroke(lineWidth: 1.0)
                         .fill(Color(UIColor.systemGroupedBackground))
-                        .frame(width: .infinity, height: 50)
+                        .frame(width: 200, height: 50)
                     Picker("", selection: $questionType)
                     {
                         ForEach(QuestionType.allCases)  {
@@ -68,7 +68,7 @@ struct SideMenu: View {
         .background(Color(UIColor.tertiarySystemBackground)
             .opacity(1.0))
         .ignoresSafeArea(edges: .top)
-        .frame(width: 250, height: .infinity)
+        .frame(width: 250, height: UIScreen.main.bounds.height)
     }
         
 }
